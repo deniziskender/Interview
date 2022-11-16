@@ -14,7 +14,7 @@ public class NonRecursiveSquareMatrixTraverserTest {
         MatrixTraverser traverser = new NonRecursiveSquareMatrixTraverser(m);
         traverser.traverse();
         String result = traverser.getResult();
-        assertEquals("1 2 3 6 9 8 7 4 5", result);
+        assertEquals("1 2 3 6 9 8 7 4 5 ", result);
     }
 
     @Test
@@ -23,7 +23,7 @@ public class NonRecursiveSquareMatrixTraverserTest {
         MatrixTraverser traverser = new NonRecursiveSquareMatrixTraverser(m);
         traverser.traverse();
         String result = traverser.getResult();
-        assertEquals("1 2 3 6 9 12 11 10 7 4 5 8", result);
+        assertEquals("1 2 3 6 9 12 11 10 7 4 5 8 ", result);
     }
 
     @Test
@@ -32,6 +32,6 @@ public class NonRecursiveSquareMatrixTraverserTest {
         MatrixTraverser traverser = new NonRecursiveSquareMatrixTraverser(m);
         traverser.traverse();
         String result = traverser.getResult();
-        assertEquals("1 2 3 4 5 10 15 20 19 18 17 16 11 6 7 8 9 14 13 12", result);
+        assertEquals("1 2 3 4 5 10 15 20 19 18 17 16 11 6 7 8 9 14 13 12 ", result);
     }
 }

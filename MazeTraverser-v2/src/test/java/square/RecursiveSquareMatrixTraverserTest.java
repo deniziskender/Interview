@@ -15,7 +15,7 @@ public class RecursiveSquareMatrixTraverserTest {
         MatrixTraverser traverser = new RecursiveSquareMatrixTraverser(m);
         traverser.traverse();
         String result = traverser.getResult();
-        assertEquals("1 2 3 6 9 8 7 4 5", result);
+        assertEquals("1 2 3 6 9 8 7 4 5 ", result);
     }
 
     @Test
@@ -24,6 +24,6 @@ public class RecursiveSquareMatrixTraverserTest {
         MatrixTraverser traverser = new RecursiveSquareMatrixTraverser(m);
         traverser.traverse();
         String result = traverser.getResult();
-        assertEquals("1 2 3 4 8 12 16 15 14 13 9 5 6 7 11 10", result);
+        assertEquals("1 2 3 4 8 12 16 15 14 13 9 5 6 7 11 10 ", result);
     }
 }

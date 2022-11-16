@@ -9,19 +9,13 @@ import java.util.List;
 @Getter
 public abstract class MatrixTraverser {
 
-    protected Matrix matrix;
+    protected final Matrix matrix;
     protected List<Cell> path;
     protected Cell current;
-
-    private int startX;
-
-    private int startY;
 
     public MatrixTraverser(Matrix matrix, int startX, int startY) {
         this.matrix = matrix;
         this.path = new ArrayList<>();
-        this.startX = startX;
-        this.startY = startY;
         moveTo(matrix.getCell(startX, startY));
     }
 
@@ -41,13 +35,7 @@ public abstract class MatrixTraverser {
 
     public String getResult() {
         StringBuilder result = new StringBuilder();
-        // todo: java 8
-        for (int i = 0; i < path.size(); i++) {
-            result.append(path.get(i).getValue());
-            if (i != path.size() - 1) {
-                result.append(" ");
-            }
-        }
+        path.forEach(cell -> result.append(cell.getValue()).append(" "));
         return result.toString();
     }
 
@@ -66,5 +54,4 @@ public abstract class MatrixTraverser {
         current.setVisited(true);
         path.add(current);
     }
-
 }

@@ -5,29 +5,16 @@ import org.example.direction.DIRECTION;
 
 @Getter
 public class Matrix {
-    private int width;
+    private final int width;
 
-    private int height;
-    private Cell[][] cells;
+    private final int height;
+    private final Cell[][] cells;
 
     public Matrix(int width, int height) {
         this.width = width;
         this.height = height;
         this.cells = new Cell[width][height];
         createCells();
-    }
-
-    private void createCells() {
-        int value = 1;
-        for (int i = 0; i < width; i++) {
-            for (int j = 0; j < height; j++) {
-                cells[i][j] = Cell.builder()
-                        .i(i)
-                        .j(j)
-                        .value(value++)
-                        .build();
-            }
-        }
     }
 
     public int getNumCells() {
@@ -50,6 +37,19 @@ public class Matrix {
             case DOWN -> cell = cells[i + 1][j];
         }
         return cell.isVisited() ? null : cell;
+    }
+
+    private void createCells() {
+        int value = 1;
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < height; j++) {
+                cells[i][j] = Cell.builder()
+                        .i(i)
+                        .j(j)
+                        .value(value++)
+                        .build();
+            }
+        }
     }
 
     private boolean isOutOfBounds(int i, int j, DIRECTION direction) {

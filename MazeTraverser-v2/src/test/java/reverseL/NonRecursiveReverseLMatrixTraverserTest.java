@@ -14,7 +14,7 @@ public class NonRecursiveReverseLMatrixTraverserTest {
         MatrixTraverser traverser = new NonRecursiveReverseLMatrixTraverser(m);
         traverser.traverse();
         String result = traverser.getResult();
-        assertEquals("7 8 9 6 3 2 5 4 1", result);
+        assertEquals("7 8 9 6 3 2 5 4 1 ", result);
     }
 
     @Test
@@ -23,7 +23,7 @@ public class NonRecursiveReverseLMatrixTraverserTest {
         MatrixTraverser traverser = new NonRecursiveReverseLMatrixTraverser(m);
         traverser.traverse();
         String result = traverser.getResult();
-        assertEquals("10 11 12 9 6 3 2 5 8 7 4 1", result);
+        assertEquals("10 11 12 9 6 3 2 5 8 7 4 1 ", result);
     }
 
     @Test
@@ -32,6 +32,6 @@ public class NonRecursiveReverseLMatrixTraverserTest {
         MatrixTraverser traverser = new NonRecursiveReverseLMatrixTraverser(m);
         traverser.traverse();
         String result = traverser.getResult();
-        assertEquals("16 17 18 19 20 15 10 5 4 9 14 13 12 11 6 7 8 3 2 1", result);
+        assertEquals("16 17 18 19 20 15 10 5 4 9 14 13 12 11 6 7 8 3 2 1 ", result);
     }
 }
