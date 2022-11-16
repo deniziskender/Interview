@@ -3,6 +3,8 @@ package org.example;
 import lombok.Getter;
 import org.example.direction.DIRECTION;
 
+import java.util.Optional;
+
 @Getter
 public class Matrix {
     private final int width;
@@ -25,9 +27,9 @@ public class Matrix {
         return cells[i][j];
     }
 
-    public Cell getNext(int i, int j, DIRECTION direction) {
+    public Optional<Cell> getNext(int i, int j, DIRECTION direction) {
         if (isOutOfBounds(i, j, direction)) {
-            return null;
+            return Optional.empty();
         }
         Cell cell = null;
         switch (direction) {
@@ -36,7 +38,7 @@ public class Matrix {
             case UP -> cell = cells[i - 1][j];
             case DOWN -> cell = cells[i + 1][j];
         }
-        return cell.isVisited() ? null : cell;
+        return cell.isVisited() ? Optional.empty() : Optional.of(cell);
     }
 
     private void createCells() {

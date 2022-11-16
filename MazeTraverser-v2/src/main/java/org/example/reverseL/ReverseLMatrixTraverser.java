@@ -12,11 +12,11 @@ public abstract class ReverseLMatrixTraverser extends MatrixTraverser {
     }
 
     public void traverseL() {
-        moveUntilTo(RIGHT);
-        moveUntilTo(UP);
+        moveToMost(RIGHT);
+        moveToMost(UP);
         moveTo(LEFT);
-        moveUntilTo(DOWN);
-        moveUntilTo(LEFT);
+        moveToMost(DOWN);
+        moveToMost(LEFT);
         moveTo(UP);
     }
 }

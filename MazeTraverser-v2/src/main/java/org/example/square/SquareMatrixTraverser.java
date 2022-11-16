@@ -12,9 +12,9 @@ public abstract class SquareMatrixTraverser extends MatrixTraverser {
     }
 
     public void traverseSquare() {
-        moveUntilTo(RIGHT);
-        moveUntilTo(DOWN);
-        moveUntilTo(LEFT);
-        moveUntilTo(UP);
+        moveToMost(RIGHT);
+        moveToMost(DOWN);
+        moveToMost(LEFT);
+        moveToMost(UP);
     }
 }

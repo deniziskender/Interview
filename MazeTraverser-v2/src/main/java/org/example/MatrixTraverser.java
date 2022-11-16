@@ -19,18 +19,17 @@ public abstract class MatrixTraverser {
         moveTo(matrix.getCell(startX, startY));
     }
 
-    public void moveUntilTo(DIRECTION direction) {
-        while (true) {
-            Cell next = matrix.getNext(current.getI(), current.getJ(), direction);
-            if (next == null) break;
-            moveTo(next);
-        }
+    public void moveToMost(DIRECTION direction) {
+        matrix.getNext(current.getI(), current.getJ(), direction)
+                .ifPresent(nextCell -> {
+                    this.moveTo(nextCell);
+                    moveToMost(direction);
+                });
     }
 
     public void moveTo(DIRECTION direction) {
-        Cell next = matrix.getNext(current.getI(), current.getJ(), direction);
-        if (next == null) return;
-        moveTo(next);
+        matrix.getNext(current.getI(), current.getJ(), direction)
+                .ifPresent(this::moveTo);
     }
 
     public String getResult() {
